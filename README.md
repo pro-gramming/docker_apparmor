@@ -27,6 +27,7 @@ $ apt-get install -y apparmor-utils
 ### Generating security apparmor-profile
 
 $ aa-genprof /root/add_data.sh
+
 Note: We need to run the above script in the different terminal simultaneously
 
 ### Path for our new apparmor profile
@@ -43,19 +44,19 @@ $ apparmor_parser /etc/apparmor.d/root.add_data.sh
 
 ### How to delete an existing app-armor profile:
 
-$ apparmor_parser -R /etc/apparmor.d/root.add_data.sh
-$ ln -s /etc/apparmor.d/root.add_data.sh /etc/apparmor.d/disable
+* $ apparmor_parser -R /etc/apparmor.d/root.add_data.sh
+* $ ln -s /etc/apparmor.d/root.add_data.sh /etc/apparmor.d/disable
 
 
 ## Note: Path to install apparmor profiles 
 
-path: /etc/apparmor.d/no_raw_net
-permissions: 0644
-owner: root
+* path: /etc/apparmor.d/no_raw_net
+* permissions: 0644
+* owner: root
 
 
 ## Load and unload profiles:
 
-$ apparmor_parser -r -W /path/to/your_profile
-$ docker run --rm -it --security-opt apparmor=your_profile hello-world
-$ apparmor_parser -R /path/to/profile
+* $ apparmor_parser -r -W /path/to/your_profile
+* $ docker run --rm -it --security-opt apparmor=your_profile hello-world
+* $ apparmor_parser -R /path/to/profile
