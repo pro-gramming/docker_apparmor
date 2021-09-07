@@ -21,5 +21,5 @@ RUN apt-get update && \
 
 ADD . /etc/apparmor.d/
 
-CMD [ "/bin/bash" ]
+CMD [ "tail", "-f", "/dev/null" ]
 
