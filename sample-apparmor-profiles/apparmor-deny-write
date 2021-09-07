@@ -1,0 +1,5 @@
+profile apparmor-deny-write flags={attach_disconnected} {
+    file,
+    # Deny all file writes.
+    deny /** w,
+}
