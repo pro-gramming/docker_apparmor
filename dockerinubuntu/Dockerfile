@@ -25,5 +25,10 @@ RUN apt-get update && \
 
 ADD . /etc/apparmor.d/
 
-CMD [ "tail", "-f", "/dev/null" ]
+ADD startup.sh /usr/local/bin
+
+RUN chmod 777 /usr/local/bin/startup.sh
+
+CMD /usr/local/bin/startup.sh
+
 
