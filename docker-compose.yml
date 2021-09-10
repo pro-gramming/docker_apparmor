@@ -1,8 +1,8 @@
 version: '3.3'
 services: 
   master:
-    container_name: dockerubuntu
-    image: dockerindocker
+    container_name: ubuntudocker
+    image: dockerinubuntu
     build:
       context: dockerinubuntu
     volumes:
