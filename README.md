@@ -1,14 +1,10 @@
-### To check if the apparmor if loaded into the kernel
+### To check if the apparmor is loaded into the kernel
 
 $ cat /sys/module/apparmor/parameters/enabled
 
 ### To check if it is running 
 
 $ systemctl status apparmor
-
-### To check which profiles are loaded in the kernel
-
-$ cat /sys/kernel/security/apparmor/profiles
 
 ### Alternative to check profile loaded and enforced
 
@@ -47,15 +43,7 @@ $ apparmor_parser /etc/apparmor.d/root.add_data.sh
 * $ apparmor_parser -R /etc/apparmor.d/root.add_data.sh
 * $ ln -s /etc/apparmor.d/root.add_data.sh /etc/apparmor.d/disable
 
-
-## Note: Path to install apparmor profiles 
-
-* path: /etc/apparmor.d/no_raw_net
-* permissions: 0644
-* owner: root
-
-
-## Load and unload profiles:
+### Load and unload profiles:
 
 * $ apparmor_parser -r -W /path/to/your_profile
 * $ docker run --rm -it --security-opt apparmor=your_profile hello-world
