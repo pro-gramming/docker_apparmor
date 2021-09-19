@@ -46,5 +46,5 @@ $ apparmor_parser /etc/apparmor.d/root.add_data.sh
 ### Load and unload profiles:
 
 * $ apparmor_parser -r -W /path/to/your_profile
-* $ docker run --rm -it --security-opt apparmor=your_profile hello-world
+* $ docker run --rm -it --security-opt apparmor=your_profile busybox:latest sh
 * $ apparmor_parser -R /path/to/profile
